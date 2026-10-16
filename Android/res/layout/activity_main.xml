@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    tools:context=".MainActivity">
+
+    <!-- Top Header Toolbar to support options menu -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/black"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="TeamBox"
+        app:titleTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- ScrollView ensures content doesn't get clipped on smaller screens -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Registration Callout -->
+            <TextView
+                android:id="@+id/registMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/registMsg"
+                android:textAlignment="center"
+                android:textColor="#666666"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/registBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/purple_200"
+                android:text="@string/regist"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <!-- Main Form Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/loginMsg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/loginMsg"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Username Field -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/field_tag_1"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/field_tag_1"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/uname"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:autofillHints="username"
+                            android:backgroundTint="@color/purple_500"
+                            android:inputType="text"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <!-- Password Field -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/field_tag_2"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/field_tag_2"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/passwd"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:autofillHints="password"
+                            android:backgroundTint="@color/purple_500"
+                            android:inputType="textPassword"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <!-- Verification Code Display Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/field_tag_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/field_tag_3"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <!-- User-friendly inline view displaying the generated code -->
+                        <TextView
+                            android:id="@+id/tvGeneratedCode"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="------"
+                            android:textColor="@color/purple_500"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/btGet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/black"
+                            android:text="@string/getVC"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <!-- OTP Input Field -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/field_tag_4"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/field_tag_4"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/OTC"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/purple_500"
+                            android:inputType="number"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <!-- Action Buttons Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <Button
+                            android:id="@+id/btLogin"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/green"
+                            android:text="@string/login"
+                            android:textColor="@color/black"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/btChangePwd"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/blue_200"
+                            android:text="@string/change"
+                            android:textColor="@color/black"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/btForgetPwd"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/red_200"
+                            android:text="@string/forget"
+                            android:textColor="@color/black"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

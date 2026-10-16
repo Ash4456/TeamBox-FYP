@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    tools:context=".CreateProjectActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- 標題 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Create Project"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <!-- 表單內容卡片 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Project Title -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Project Title"
+                            android:inputType="text"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Group Size Label & Spinner -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="Group Size"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spGroupSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@android:drawable/btn_dropdown" />
+
+                    <!-- Select Deadline Button -->
+                    <Button
+                        android:id="@+id/btnDeadline"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="Select Deadline"
+                        android:textColor="@color/black" />
+
+                    <!-- Score Input -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etScore"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Score"
+                            android:inputType="number"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Primary Action: Create Project -->
+                    <Button
+                        android:id="@+id/btnCreate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:backgroundTint="@color/purple_500"
+                        android:text="Create Project"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <!-- Secondary Action: Student Page Action -->
+                    <Button
+                        android:id="@+id/btnStudentPage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/blue_200"
+                        android:text="Student Page Action"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 輸出結果區塊 -->
+            <TextView
+                android:id="@+id/tvOutput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:padding="8dp"
+                android:textColor="#333333"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

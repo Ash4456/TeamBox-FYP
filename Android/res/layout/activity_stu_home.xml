@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    tools:context=".StuHomeActivity">
+
+    <!-- ScrollView to ensure the entire dashboard is accessible and scrollable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Native Toolbar replacing the old header to support options menu -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/black"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:title="TeamBox | STUDENT"
+                app:titleTextColor="@color/white" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp" />
+
+            <!-- Welcome Back Text -->
+            <TextView
+                android:id="@+id/wel_back_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/welStuText"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/stuDashMsg"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+            <!-- Dashboard Statistics Cards Grid (2x2) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- Active Projects Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Active Projects"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="0"
+                            android:textColor="@color/purple_500"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="In progress 📶"
+                            android:textColor="#666666"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Notifications Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Notifications"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="0"
+                            android:textColor="@color/purple_500"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Unread ⚠️"
+                            android:textColor="#666666"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Second Row of Stats Cards -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- Assigned Tasks Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Assigned Tasks"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="0"
+                            android:textColor="@color/purple_500"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Assigned to you"
+                            android:textColor="#666666"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Completed Tasks Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Completed Tasks"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="0"
+                            android:textColor="@color/purple_500"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Finished"
+                            android:textColor="#666666"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <!-- Team Progress Card Section -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Team Progress"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ProgressBar
+                            android:id="@+id/progressBar2"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="8dp"
+                            android:layout_weight="1"
+                            android:progressTint="@color/purple_500" />
+
+                        <TextView
+                            android:id="@+id/textView17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:text="0%"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="* of * project tasks have been completed."
+                        android:textColor="#666666"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Quick Access Card Section -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="Quick Access"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Grid of Action Buttons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <!-- Projects Button -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/ibViewProjects"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                app:srcCompat="?android:attr/actionModeFindDrawable" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Projects"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <!-- Tasks Button -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/ibViewTasks"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                app:srcCompat="@android:drawable/ic_menu_agenda" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Tasks"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <!-- Teams Button -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/ibViewTeams"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                app:srcCompat="@android:drawable/ic_menu_myplaces" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Teams"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <!-- Files Button -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/ibSD"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                app:srcCompat="@android:drawable/ic_menu_save" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Files"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <!-- Chat Button -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/ibChat"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                app:srcCompat="@android:drawable/sym_action_chat" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Chat"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_menu"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="activity_main_menu"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_privacy"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="Privacy"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_help"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="Help"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_info"
+        android:icon="@android:drawable/ic_dialog_info"
+        android:title="App Information"
+        app:showAsAction="always" />
+</menu>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_notify"
+        android:icon="@android:drawable/stat_sys_warning"
+        android:iconTint="@color/yellow"
+        android:title="Notification"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_calendar"
+        android:icon="@android:drawable/ic_menu_today"
+        android:iconTint="@color/white"
+        android:title="Calendar"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/stu_profile_icon"
+        android:title="My Student Profile"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_logout"
+        android:icon="@android:drawable/ic_lock_power_off"
+        android:iconTint="@color/red"
+        android:title="My Student Profile"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_projects"
+        android:title="My Projects"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_tasks"
+        android:title="My Tasks"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_files"
+        android:title="My File Locker"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_teams"
+        android:title="My Teams"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_chat"
+        android:title="Group Chat"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_setting"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="Setting"
+        app:showAsAction="never" />
+</menu>

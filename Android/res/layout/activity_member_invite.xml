@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    tools:context=".MemberInviteActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Invite Team Member"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <!-- Form Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Member Email Input -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etMemberEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Student / Member Email"
+                            android:inputType="textEmailAddress"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Role Selection Label & Spinner -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="Assign Role"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spMemberRole"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@android:drawable/btn_dropdown" />
+
+                    <!-- Send Invitation Button -->
+                    <Button
+                        android:id="@+id/btnSendInvite"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:backgroundTint="@color/purple_500"
+                        android:text="Send Invitation"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <!-- Back to Team Page Button -->
+                    <Button
+                        android:id="@+id/btnTeamPage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/blue_200"
+                        android:text="Back to Team"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Output Feedback Summary -->
+            <TextView
+                android:id="@+id/tvInviteOutput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:padding="8dp"
+                android:textColor="#333333"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

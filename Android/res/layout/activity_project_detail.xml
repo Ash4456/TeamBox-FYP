@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    tools:context=".ProjectDetailActivity">
+
+    <!-- Header Bar -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btBack"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="← Back"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Project Details"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="48dp"
+            android:layout_height="36dp" />
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Card 1: Overview -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvProjectName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Project Name"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Category: Software Engineering"
+                        android:textColor="#666666"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:drawable/button_onoff_indicator_on"
+                            android:text="Status: Executing"
+                            android:textColor="#333333"
+                            android:textStyle="bold" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/tvProgress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Progress: 60%"
+                            android:textColor="#00796B"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 2: Description & Timeline -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Cross-platform collaboration and management system for student teams."
+                        android:textColor="#444444"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="#DDDDDD" />
+
+                    <TextView
+                        android:id="@+id/tvPeriod"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Period: 2026-09-01 to 2027-04-30"
+                        android:textColor="#666666"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">TeamBox</string>
+
+    <!--strings for MainActivity below-->
+    <string name="AppName">TeamBox</string>
+    <string name="welStaText">Welcome to TeamBox!</string>
+    <string name="registMsg">Are you new?</string>
+    <string name="loginMsg">Or, have an account? (Flash Sign-In in here)</string>
+    <string name="regist">Sign Up</string>
+    <string name="lbDomain">Domain Selection：</string>
+    <string name="lbIdentity">Identity Selection：</string>
+    <string name="field_tag_1">Your Username：</string>
+    <string name="field_tag_2">Enter Password：</string>
+    <string name="field_tag_3">Verify Code：</string>
+    <string name="field_tag_4">Enter Here：</string>
+    <string name="getVC">Get OTC</string>
+    <string name="login">Login</string>
+    <string name="change">Change PWD</string>
+    <string name="forget">Forget PWD</string>
+
+
+    <!--strings for StuHomeActivity below-->
+    <string name="stuHome">TeamBox｜STUDENT</string>
+    <string name="welStuText">Welcome Back, _student name_</string>
+    <string name="StuName">Student Name</string>
+    <string name="stuDashMsg">This is your Dashboard. You can view your projects, assigned tasks, team progress, shared DOCs and recent notifications.</string>
+
+</resources>
